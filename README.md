@@ -202,18 +202,6 @@ Each service includes Docker configuration for containerized deployment.
 
 ---
 
-##  How To Run (Local)
----
-1.Start Eureka Server
-2.Start API Gateway
-3.Start all microservices:
-   Auth Service
-   User Service
-   Product Service
-   Order Service
-4.Test APIs using Postman
----
-
 ##  Features
 
 ✔ User Registration & Login  
