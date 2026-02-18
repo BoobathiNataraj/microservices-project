@@ -22,12 +22,12 @@ public class JwtAuthFilter implements GlobalFilter {
 
         String path = exchange.getRequest().getURI().getPath();
 
-        // ✅ Public endpoints
+        //Public endpoints
         if (path.startsWith("/auth")) {
             return chain.filter(exchange);
         }
 
-        // 🔐 Protected endpoints
+        //Protected endpoints
         String authHeader = exchange.getRequest()
                 .getHeaders()
                 .getFirst(HttpHeaders.AUTHORIZATION);

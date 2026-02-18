@@ -7,9 +7,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
-@Table(name = "users")   
+@Table(name = "users")
 public class User {
 
 	@Id
@@ -17,13 +18,16 @@ public class User {
     private Long userId;
 
 	@NotBlank(message = "Name is required")
+	@Pattern(
+		    regexp = "^[A-Za-z ]+$",
+		    message = "Name must contain only alphabets"
+		)
     private String name;
 
     @Email(message = "Invalid email format")
     @NotBlank(message = "Email is required")
     private String email;
 
-    // getters & setters
     public Long getUserId() {
         return userId;
     }

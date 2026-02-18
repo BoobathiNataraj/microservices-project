@@ -33,7 +33,7 @@ public class JwtUtil {
                 .compact();
     }
 
-    // 🔹 Validate Token
+    //Validate Token
     public boolean validateToken(String token) {
         try {
             Jwts.parserBuilder()
@@ -46,7 +46,7 @@ public class JwtUtil {
         }
     }
 
-    // 🔹 Extract Username
+    //Extract Username
     public String extractUsername(String token) {
         Claims claims = Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())
@@ -57,7 +57,7 @@ public class JwtUtil {
         return claims.getSubject();
     }
 
-    // 🔹 Extract Role
+    //Extract Role
     public String extractRole(String token) {
         Claims claims = Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())

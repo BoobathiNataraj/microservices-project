@@ -14,4 +14,8 @@ public class ProductClientFallback implements ProductClient {
         product.setPrice(0);
         return product;
     }
+	@Override
+    public void reduceStock(Long id, int quantity) {
+        System.out.println("Product service is down. Cannot reduce stock for productId: " + id);
+    }
 }

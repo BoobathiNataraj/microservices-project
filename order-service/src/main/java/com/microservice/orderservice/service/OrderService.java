@@ -12,6 +12,7 @@ import com.microservice.orderservice.dto.PaymentDTO;
 import com.microservice.orderservice.dto.ProductDTO;
 import com.microservice.orderservice.dto.UserDTO;
 import com.microservice.orderservice.entity.Order;
+import com.microservice.orderservice.exception.InsufficientStockException;
 import com.microservice.orderservice.exception.ProductNotFoundException;
 import com.microservice.orderservice.exception.UserNotFoundException;
 import com.microservice.orderservice.repository.OrderRepository;
@@ -26,7 +27,6 @@ public class OrderService {
     private final ProductClient productClient;
     private final PaymentClient paymentClient;
 
-    // ✅ Constructor Injection (BEST PRACTICE)
     public OrderService(OrderRepository orderRepository,
                         UserClient userClient,
                         ProductClient productClient,
@@ -39,40 +39,52 @@ public class OrderService {
 
     public Order createOrder(Order order) {
 
-        // 1️⃣ Validate User
+        
         UserDTO user = userClient.getUserById(order.getUserId());
         if (user == null) {
             throw new UserNotFoundException("User not found with id " + order.getUserId());
         }
 
-        // 2️⃣ Validate Product
+        
         ProductDTO product = productClient.getProductById(order.getProductId());
         if (product == null || product.getPrice() == 0) {
             throw new ProductNotFoundException("Product not available with id " + order.getProductId());
         }
+        if (order.getQuantity() > product.getStock()) {
+            throw new InsufficientStockException(
+                    "Only " + product.getStock() + 
+                    " items available. You requested " + order.getQuantity());
+        }
+        product.setStock(product.getStock() - order.getQuantity());
 
-        // 3️⃣ Calculate Total Amount
+        
         double totalAmount = product.getPrice() * order.getQuantity();
         order.setTotalAmount(totalAmount);
         order.setStatus("CREATED");
 
-        // 4️⃣ Save Order
+     
         Order savedOrder = orderRepository.save(order);
 
-        // 5️⃣ Call Payment Service
+      
         PaymentDTO payment = new PaymentDTO();
         payment.setOrderId(savedOrder.getOrderId());
         payment.setAmount(savedOrder.getTotalAmount());
 
         PaymentDTO paymentResponse = paymentClient.makePayment(payment);
 
-        // 6️⃣ Update Order Status
+      
         if ("SUCCESS".equalsIgnoreCase(paymentResponse.getStatus())) {
+
+            productClient.reduceStock(
+                    savedOrder.getProductId(),
+                    savedOrder.getQuantity()
+            );
+
             savedOrder.setStatus("PAID");
+
         } else {
             savedOrder.setStatus("PAYMENT_FAILED");
         }
-
         return orderRepository.save(savedOrder);
     }
 

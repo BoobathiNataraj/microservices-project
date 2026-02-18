@@ -24,34 +24,25 @@ public class PaymentController {
         this.paymentRepository = paymentRepository;
     }
     
-    
-   
-    
-
     @PostMapping
     public Payment makePayment(@RequestBody Payment payment) {
         return paymentService.makePayment(payment);
     }
-	/*
-	 * @PostMapping("/payments") public Payment makePayment(@RequestBody Payment
-	 * payment) { payment.setStatus("SUCCESS"); return
-	 * paymentRepository.save(payment); }
-	 */
-    
-    // 🔹 Get all payments
+	
+    //Get all payments
     @GetMapping
     public List<Payment> getAllPayments() {
         return paymentRepository.findAll();
     }
 
-    // 🔹 Get payment by ID
+    //Get payment by ID
     @GetMapping("/{id}")
     public Payment getPaymentById(@PathVariable Long id) {
         return paymentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Payment not found with id " + id));
     }
 
-    // 🔹 Get payment by Order ID (important for microservices)
+    //Get payment by Order Id
     @GetMapping("/order/{orderId}")
     public Payment getPaymentByOrderId(@PathVariable Long orderId) {
         return paymentRepository.findByOrderId(orderId)

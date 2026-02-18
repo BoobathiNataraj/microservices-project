@@ -21,5 +21,5 @@ public class AuthUser {
     @Column(nullable = false)
     private String password;
 
-    private String role;   // ROLE_USER, ROLE_ADMIN
+    private String role; 
 }

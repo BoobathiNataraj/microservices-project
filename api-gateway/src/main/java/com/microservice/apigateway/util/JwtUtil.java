@@ -14,7 +14,6 @@ import java.security.Key;
 public class JwtUtil {
 
     //private static final String SECRET = "mysecretkeymysecretkeymysecretkeymysecretkey"; 
-    // must be 32+ chars
 	@Value("${jwt.secret}")
 	private String secret;
 

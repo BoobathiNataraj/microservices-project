@@ -16,6 +16,6 @@ public class Payment {
 
     private Long orderId;
     private Double amount;
-    private String status;  // SUCCESS / FAILED / PENDING
+    private String status;  
 }
 

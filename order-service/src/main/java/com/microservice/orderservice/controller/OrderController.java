@@ -14,24 +14,21 @@ public class OrderController {
 
     private final OrderService orderService;
 
-    // ✅ Constructor injection
+   
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
-
-    // CREATE ORDER
+   
     @PostMapping
     public Order createOrder(@RequestBody Order order) {
         return orderService.createOrder(order);
     }
-
-    // GET ALL ORDERS
+    
     @GetMapping
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
     }
-
-    // GET ORDER BY ID
+    
     @GetMapping("/{id}")
     public Order getOrderById(@PathVariable Long id) {
         return orderService.getOrderById(id);
