@@ -136,7 +136,7 @@ Body
 {  
   "userId": 1,  
   "productId": 1,  
-  "quantity": 2  
+  "quantity": 3  
 }    
 
 Postman Scrennshot
