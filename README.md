@@ -33,14 +33,14 @@ This project follows Microservices Architecture with the following components:
 ## API Endpoints (Via API Gateway)
 http://localhost:8085
 
-# 1.Register (Auth User)  
+**1.Register (Auth User)  
 POST /auth/register  
 Body
 {  
   "username": "admin",  
   "password": "admin123"  
 }    
-Postman Screenshot 
+**Postman Screenshot 
  ![Alt Text](screenshots/auth_register.png)
 2.Login (Generate JWT Token)  
 POST /auth/login  
