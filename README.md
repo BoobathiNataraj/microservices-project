@@ -37,8 +37,8 @@ http://localhost:8085
 POST /auth/register  
 Body
 {  
-  "username": "admin",  
-  "password": "admin123"  
+  "username": "boobathi",  
+  "password": "12345678"  
 }    
 **Postman Screenshot**
 
@@ -50,8 +50,8 @@ POST /auth/login
 Body
 
 {  
-  "username": "admin",  
-  "password": "admin123"  
+  "username": "boobathi",  
+  "password": "12345678"  
 }    
 
  Response
@@ -83,8 +83,8 @@ POST /users
 Body
 
 {  
-  "name": "Ravi",  
-  "email": "ravi@gmail.com"  
+  "name": "vasanth",  
+  "email": "vasanth@gmail.com"  
 }    
 
 **Postman Screenshot**
@@ -109,8 +109,8 @@ POST /products
 Body
 
 {  
-  "name": "Laptop",  
-  "price": 55000,  
+  "name": "pen",  
+  "price": 20,  
   "stock": 10  
 } 
 
