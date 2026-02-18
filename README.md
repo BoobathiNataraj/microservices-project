@@ -130,40 +130,8 @@ Make Payment (Called by Order Service)
 POST /payments  
 ⚠️ Normally NOT called directly by client
 Triggered automatically when order is placed.
-##  Base URL (API Gateway)
-http://localhost:8085
 
-Register User
 
-POST /auth/register
-
-Login
-
-POST /auth/login
-
-Create User
-
-POST /users
-
-Create Products
-
-POST /products
-
-Place Order
-
-POST /orders
- ## Screenshots 
- ---
-
- ![Alt Text](docs/images/filename.png)
- ![Alt Text](docs/images/filename.png)
- ![Alt Text](docs/images/filename.png)
-## Authentication Flow (JWT)
-1.User registers or logs in via Auth Service
-2.Auth Service returns a JWT Token
-3.Token must be passed in Authorization Header
-4.Secured services validate the token before processing requests
-Authorization: Bearer <JWT_TOKEN>
 ##  Request Flow
 
 1. Client sends request to API Gateway
@@ -188,12 +156,7 @@ microservices-project
 
 ---
 
-##  Authentication Flow
 
-- User registers via User Service
-- Login via Auth Service
-- JWT token generated
-- Token required for secured APIs
 
 ---
 
