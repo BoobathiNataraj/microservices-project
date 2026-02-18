@@ -63,6 +63,8 @@ Body
  Save this token — required for all secured APIs.
 
  **Postman Screenshot**
+
+ 
  ![Alt Text](screenshots/auth_login.png)  
  
  Authorization Header (IMPORTANT)
