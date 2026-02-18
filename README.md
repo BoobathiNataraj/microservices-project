@@ -36,10 +36,10 @@ http://localhost:8085
 1.Register (Auth User)  
 POST /auth/register  
 Body
-{
-  "username": "admin",
-  "password": "admin123"
-}  
+{  
+  "username": "admin",  
+  "password": "admin123"  
+}    
 Postman Screenshot 
  ![Alt Text](screenshots/auth_register.png)
 2.Login (Generate JWT Token)  
@@ -47,16 +47,16 @@ POST /auth/login
 
 Body
 
-{
-  "username": "admin",
-  "password": "admin123"
-}  
+{  
+  "username": "admin",  
+  "password": "admin123"  
+}    
 
  Response
 
-{
-  "token": "eyJhbGciOiJIUzI1NiJ9..."
-}
+{  
+  "token": "eyJhbGciOiJIUzI1NiJ9..."  
+}  
 
  Save this token — required for all secured APIs.
 
@@ -76,10 +76,10 @@ POST /users
 
 Body
 
-{
+{  
   "name": "Ravi",
-  "email": "ravi@gmail.com"
-}  
+  "email": "ravi@gmail.com"  
+}    
 Postman Screenshot
 ![Alt Text](screenshots/user_add.png)  
 Input Validation & Error Handling   
@@ -96,11 +96,11 @@ Create Product
 POST /products  
 Body
 
-{
-  "name": "Laptop",
-  "price": 55000,
-  "stock": 10
-}  
+{  
+  "name": "Laptop",  
+  "price": 55000,  
+  "stock": 10  
+}    
 Postman Screenshot
 ![Alt Text](screenshots/product_add.png)  
 Input Validation & Error Handling   
@@ -116,11 +116,11 @@ Place Order
 POST /orders  
 Body
 
-{
-  "userId": 1,
-  "productId": 1,
-  "quantity": 2
-}  
+{  
+  "userId": 1,  
+  "productId": 1,  
+  "quantity": 2  
+}    
 Postman Scrennshot
 ![Alt Text](screenshots/order_add.png)  
 Input Validation & Error Handling   
