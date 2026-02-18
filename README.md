@@ -40,9 +40,11 @@ Body
   "username": "admin",  
   "password": "admin123"  
 }    
-**Postman Screenshot 
+**Postman Screenshot**
+
  ![Alt Text](screenshots/auth_register.png)
-2.Login (Generate JWT Token)  
+ 
+**2.Login (Generate JWT Token)**  
 POST /auth/login  
 
 Body
@@ -60,8 +62,9 @@ Body
 
  Save this token — required for all secured APIs.
 
- Postman Screenshot-
+ **Postman Screenshot**
  ![Alt Text](screenshots/auth_login.png)  
+ 
  Authorization Header (IMPORTANT)
 
 For all secured APIs, add this header:
@@ -70,7 +73,8 @@ Authorization: Bearer <JWT_TOKEN>
 Content-Type: application/json    
 ![Alt Text](screenshots/auth_login_token.png)
 
-3.User Service APIs (Secured)  
+**3.User Service APIs (Secured)**
+
 Create User  
 POST /users  
 
@@ -80,11 +84,15 @@ Body
   "name": "Ravi",
   "email": "ravi@gmail.com"  
 }    
-Postman Screenshot
+
+**Postman Screenshot**
+
 ![Alt Text](screenshots/user_add.png)  
+
 Input Validation & Error Handling   
 
 ![Alt Text](screenshots/user_exception.png) 
+
  Get All Users    
 GET /users  
 
@@ -92,7 +100,7 @@ GET /users
 GET /users/{id}
 
 
-4️. Product Service APIs (Secured)  
+**4️. Product Service APIs (Secured)**    
 Create Product  
 POST /products  
 Body
@@ -101,19 +109,22 @@ Body
   "name": "Laptop",  
   "price": 55000,  
   "stock": 10  
-}    
-Postman Screenshot
-![Alt Text](screenshots/product_add.png)  
+} 
+
+**Postman Screenshot**
+![Alt Text](screenshots/product_add.png) 
+
 Input Validation & Error Handling   
 
-![Alt Text](screenshots/product_exception.png)  
+![Alt Text](screenshots/product_exception.png)
+
 Get All Products  
 GET /products  
 
 Get Product By ID    
 GET /products/{id}  
 
-5️. Order Service APIs (Secured)
+**5️. Order Service APIs (Secured)**
 Place Order  
 POST /orders  
 Body
@@ -123,12 +134,17 @@ Body
   "productId": 1,  
   "quantity": 2  
 }    
+
 Postman Scrennshot
+
 ![Alt Text](screenshots/order_add.png)  
+
 Input Validation & Error Handling 
 
 ![Alt Text](screenshots/order_exception.png) 
-6️. Payment Service APIs
+
+**6️. Payment Service APIs**
+
 Make Payment (Called by Order Service)  
 POST /payments  
 ⚠️ Normally NOT called directly by client
