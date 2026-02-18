@@ -83,6 +83,7 @@ Body
 Postman Screenshot
 ![Alt Text](screenshots/user_add.png)  
 Input Validation & Error Handling   
+
 ![Alt Text](screenshots/user_exception.png) 
  Get All Users    
 GET /users  
@@ -104,6 +105,7 @@ Body
 Postman Screenshot
 ![Alt Text](screenshots/product_add.png)  
 Input Validation & Error Handling   
+
 ![Alt Text](screenshots/product_exception.png)  
 Get All Products  
 GET /products  
@@ -123,7 +125,8 @@ Body
 }    
 Postman Scrennshot
 ![Alt Text](screenshots/order_add.png)  
-Input Validation & Error Handling   
+Input Validation & Error Handling 
+
 ![Alt Text](screenshots/order_exception.png) 
 6️. Payment Service APIs
 Make Payment (Called by Order Service)  
