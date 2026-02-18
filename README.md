@@ -33,7 +33,7 @@ This project follows Microservices Architecture with the following components:
 ## API Endpoints (Via API Gateway)
 http://localhost:8085
 
-1.Register (Auth User)  
+# 1.Register (Auth User)  
 POST /auth/register  
 Body
 {  
