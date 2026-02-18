@@ -33,8 +33,8 @@ This project follows Microservices Architecture with the following components:
 ## API Endpoints (Via API Gateway)
 http://localhost:8085
 
-1.Register (Auth User)
-POST /auth/register
+1.Register (Auth User)  
+POST /auth/register  
 Body
 {
   "username": "admin",
@@ -42,15 +42,15 @@ Body
 }  
 Postman Screenshot 
  ![Alt Text](screenshots/auth_register.png)
-2.Login (Generate JWT Token)
-POST /auth/login
+2.Login (Generate JWT Token)  
+POST /auth/login  
 
 Body
 
 {
   "username": "admin",
   "password": "admin123"
-}
+}  
 
  Response
 
@@ -62,30 +62,30 @@ Body
 
  Postman Screenshot-
  ![Alt Text](screenshots/auth_login_token.png)
- ![Alt Text](screenshots/auth_login.png)
+ ![Alt Text](screenshots/auth_login.png)  
  Authorization Header (IMPORTANT)
 
 For all secured APIs, add this header:
 
-Authorization: Bearer <JWT_TOKEN>
-Content-Type: application/json
+Authorization: Bearer <JWT_TOKEN>  
+Content-Type: application/json  
 
-3.User Service APIs (Secured)
-Create User
-POST /users
+3.User Service APIs (Secured)  
+Create User  
+POST /users  
 
 Body
 
 {
   "name": "Ravi",
   "email": "ravi@gmail.com"
-}
+}  
 Postman Screenshot
 ![Alt Text](screenshots/user_add.png)  
 Input Validation & Error Handling   
 ![Alt Text](screenshots/user_exception.png) 
- Get All Users  
-GET /users
+ Get All Users    
+GET /users  
 
  Get User By ID  
 GET /users/{id}
