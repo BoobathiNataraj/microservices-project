@@ -9,12 +9,10 @@ The project demonstrates service discovery, centralized routing, JWT-based authe
 
 - Java 17
 - Spring Boot
-- Spring Cloud
-- Eureka Server (Service Discovery)
-- API Gateway
-- JWT Authentication
-- MySQL
-- Docker
+- Spring Cloud (Eureka, Gateway)
+- Spring Security + JWT
+- Spring Data JPA
+- MySQL / H2
 - Maven
 
 ---
@@ -32,7 +30,25 @@ This project follows Microservices Architecture with the following components:
 - **Payment Service** – Payment Handling
 
 ---
+##  Base URL (API Gateway)
+http://localhost:8085
+Register User
+POST /auth/register
+Login
+POST /auth/login
+Create User
+POST /users
+Create Products
+POST /products
+Place Order
+POST /orders
 
+## Authentication Flow (JWT)
+1.User registers or logs in via Auth Service
+2.Auth Service returns a JWT Token
+3.Token must be passed in Authorization Header
+4.Secured services validate the token before processing requests
+Authorization: Bearer <JWT_TOKEN>
 ##  Request Flow
 
 1. Client sends request to API Gateway
@@ -73,13 +89,15 @@ Each service includes Docker configuration for containerized deployment.
 ---
 
 ##  How To Run (Local)
-
-1. Start MySQL
-2. Run Eureka Server
-3. Run API Gateway
-4. Run remaining microservices
-5. Test APIs using Postman
-
+---
+1.Start Eureka Server
+2.Start API Gateway
+3.Start all microservices:
+   Auth Service
+   User Service
+   Product Service
+   Order Service
+4.Test APIs using Postman
 ---
 
 ##  Features
