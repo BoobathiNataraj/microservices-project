@@ -61,14 +61,14 @@ Body
  Save this token — required for all secured APIs.
 
  Postman Screenshot-
- ![Alt Text](screenshots/auth_login_token.png)
  ![Alt Text](screenshots/auth_login.png)  
  Authorization Header (IMPORTANT)
 
 For all secured APIs, add this header:
 
 Authorization: Bearer <JWT_TOKEN>  
-Content-Type: application/json  
+Content-Type: application/json    
+![Alt Text](screenshots/auth_login_token.png)
 
 3.User Service APIs (Secured)  
 Create User  
